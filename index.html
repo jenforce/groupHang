@@ -12,22 +12,32 @@ var words = ['orange','apple','lime','grape','lemon'];
 var randomWord = [];
 
  randomWord = [...words[Math.floor(Math.random()*words.length)]];
+console.log(randomWord);
 //alert(randomWord);
 //alert(randomWord[2]);
 var tries = 2;
 var wins = 0;
 var losses =0;
+var lettersUsed = [];
 
 
 document.onkeyup = function(event) {
     var key = String.fromCharCode(event.keyCode).toLowerCase();
    // alert("key" + key); 
+ lettersUsed.push(key);
+ var i = randomWord.indexOf(key);
+ 	if(i != -1){
+
+ 	alert("i =" + i);
+ }
+
+
   document.getElementById("keydisplay").innerHTML = key;
   document.getElementById("windisplay").innerHTML = wins;
   document.getElementById("lossesdisplay").innerHTML = losses;
   document.getElementById("worddisplay").innerHTML =  '';
-  document.getElementById("lettersUsedDisplay").innerHTML = '';
-
+  document.getElementById("lettersUsedDisplay").innerHTML = lettersUsed;
+ 
 }
 
    
