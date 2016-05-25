@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hangman</title>
+
+
+</head>
+<body>
+
+<script type = "text/javascript"> 
+var words = ['orange','apple','lime','grape','lemon'];
+var randomWord = [];
+
+ randomWord = [...words[Math.floor(Math.random()*words.length)]];
+//alert(randomWord);
+//alert(randomWord[2]);
+var tries = 2;
+var wins = 0;
+var losses =0;
+
+
+document.onkeyup = function(event) {
+    var key = String.fromCharCode(event.keyCode).toLowerCase();
+   // alert("key" + key); 
+  document.getElementById("keydisplay").innerHTML = key;
+  document.getElementById("windisplay").innerHTML = wins;
+  document.getElementById("lossesdisplay").innerHTML = losses;
+  document.getElementById("worddisplay").innerHTML =  '';
+  document.getElementById("lettersUsedDisplay").innerHTML = '';
+
+}
+
+   
+
+</script>
+<h1>HangMan</h1>
+<div> User guess:<span id="keydisplay"> </span></div>
+<div> Wins: <span id="windisplay"> </span></div>
+<div> losses: <span id="lossesdisplay"> </span></div>
+<div> Word guess: <span id="worddisplay"> </span></div>
+<div> Letters Used: <span id="lettersUsedDisplay"> </span></div>
+</body>
+</html>
